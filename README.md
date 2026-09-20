@@ -60,5 +60,50 @@ service-nodeport.yaml
 <img width="1650" height="1137" alt="image" src="https://github.com/user-attachments/assets/0904258c-e3f3-41a0-9e37-bbdf00ce04d7" />
 
 
+### Задание 2: Настройка Ingress
 
+#### Задача
+
+Развернуть два приложения (frontend и backend) и обеспечить доступ к ним через Ingress по разным путям.
+
+#### Шаги выполнения
+
+1. Развернуть два Deployment:
+```
+  frontend (образ nginx).
+  backend (образ wbitt/network-multitool).
+```
+2. Создать Service для каждого приложения.
+
+3. Включить Ingress-контроллер:
+``` 
+ microk8s enable ingress
+```
+4. Создать Ingress, который:
+
+ - Открывает frontend по пути /.
+ - Открывает backend по пути /api.
+
+5. Проверить доступность:
+ ```
+ curl <host>/
+ curl <host>/api
+или через браузер.
+```
+#### Что сдать на проверку
+
+Манифесты:
+```
+deployment-frontend.yaml
+deployment-backend.yaml
+service-frontend.yaml
+service-backend.yaml
+ingress.yaml
+```
+Скриншоты проверки доступа (curl или браузер).
+
+### Решение:
+<img width="884" height="442" alt="image" src="https://github.com/user-attachments/assets/cf03685c-b004-4afb-ae3f-59b39159251a" />
+<img width="1642" height="1157" alt="image" src="https://github.com/user-attachments/assets/6bf6afcd-02c5-457f-9ae4-52fa47b67195" />
+<img width="1015" height="897" alt="image" src="https://github.com/user-attachments/assets/9b27e6c8-f783-4cbf-8da1-f29a4cd4f899" />
 
