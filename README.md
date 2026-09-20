@@ -53,56 +53,12 @@ service-nodeport.yaml
 - - - - -
 
 ### Решение:
-
-![1](https://github.com/Ivan-Shkutov/kuber_1.4/blob/main/jpg/1.png)
-
-![2](https://github.com/Ivan-Shkutov/kuber_1.4/blob/main/jpg/2.png)
-
-![3](https://github.com/Ivan-Shkutov/kuber_1.4/blob/main/jpg/3.2.png)
-
-![4](https://github.com/Ivan-Shkutov/kuber_1.4/blob/main/jpg/3.3.png)
-
-![5](https://github.com/Ivan-Shkutov/kuber_1.4/blob/main/jpg/3.png)
+<img width="1561" height="610" alt="image" src="https://github.com/user-attachments/assets/0d30dbd2-9c5b-43ce-9a7a-24d734909587" />
+<img width="1676" height="1165" alt="image" src="https://github.com/user-attachments/assets/7babcab3-8655-45a3-9505-ff10d425cee4" />
+<img width="863" height="475" alt="image" src="https://github.com/user-attachments/assets/92159dd3-2ea6-46fb-8412-7e0ba0b669c7" />
+<img width="978" height="616" alt="image" src="https://github.com/user-attachments/assets/f5771d5a-7cc8-4c81-8c0d-d199718051de" />
+<img width="1650" height="1137" alt="image" src="https://github.com/user-attachments/assets/0904258c-e3f3-41a0-9e37-bbdf00ce04d7" />
 
 
-```
-1. Проверяем статус Minikube:
-minikube status
 
-2. Запускаем Minikube (если не запущен):
-minikube start
 
-Minikube создаёт локальную виртуальную машину с Kubernetes.
-После запуска API-сервер будет доступен, kubectl автоматически настроится.
-
-3. Проверяем, что kubectl видит ноды:
-kubectl get nodes
-
-4. Применяем Deployment:
-kubectl apply -f deployment-multi-container.yaml
-
-5. Проверяем поды:
-kubectl get pods
-
-6. Применяем Service:
-kubectl apply -f service-clusterip.yaml
-
-7. Проверяем сервис:
-kubectl get svc
-
-8. Создаём временный тестовый pod:
-kubectl run test-pod --image=wbitt/network-multitool --rm -it -- sh
-
-9. Проверяем доступ к сервису:
-curl multi-container-clusterip:9001
-curl multi-container-clusterip:9002
-
-10. Применяем Service:
-kubectl apply -f service-nodeport.yaml
-
-11. Проверяем сервис:
-kubectl get svc
-
-12. Проверяем curl с локального компьютера:
-curl http://192.168.49.2:30080
-```
